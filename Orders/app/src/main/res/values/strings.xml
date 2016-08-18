@@ -1,0 +1,106 @@
+<resources>
+
+    <!--首页字符串-->
+    <string name="app_name">单单</string>
+    <string name="motto">做最好的申请单</string>
+    <string name="right">Copyright @ 2016 BeiHua University. All Rights Reserved</string>
+    <string name="title_activity_login_page">登陆</string>
+    <string name="now_login">现在登陆</string>
+    <string name="come_in_directly">直接进入</string>
+
+    <!-- 登陆字符串-->
+    <string name="prompt_user">用户</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登陆</string>
+    <string name="save_password">保存密码</string>
+    <string name="auto_login">自动登陆</string>
+    <string name="action_sign_in_short">登陆</string>
+    <string name="error_invalid_user">非法用户</string>
+    <string name="error_invalid_password">非法密码</string>
+    <string name="error_incorrect_password">错误密码</string>
+    <string name="error_incorrect_network">网络错误</string>
+    <string name="error_field_required">请求失败</string>
+    <string name="permission_rationale">需要你提供读取联系人的权限.</string>
+    <string name="forgot_password">忘记密码?</string>
+    <string name="new_user">新用户</string>
+    <string name="title_activity_main_page">主页</string>
+    <string name="action_settings">设置</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_primary_page">主页</string>
+    <string name="action_all_orders">已审订单</string>
+    <string name="action_all_applys">已审申请单</string>
+    <string name="action_mine_orders">待审订单</string>
+    <string name="action_mine_applys">待审申请单</string>
+
+    <string name="cube_ptr_pull_down">下拉</string>
+    <string name="cube_ptr_pull_down_to_refresh">下拉刷新</string>
+    <string name="cube_ptr_release_to_refresh">释放刷新</string>
+    <string name="cube_ptr_refreshing">加载中...</string>
+    <string name="cube_ptr_refresh_complete">更新完成.</string>
+
+    <string name="cube_ptr_last_update">上次更新:&#160;</string>
+    <string name="cube_ptr_seconds_ago">&#160;秒之前</string>
+    <string name="cube_ptr_minutes_ago">&#160;分钟之前</string>
+    <string name="cube_ptr_hours_ago">&#160;小时之前</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_more_info">详细信息</string>
+
+    <string name="user_name">用户名：</string>
+    <string name="nav_share_name">分享</string>
+    <string name="nav_send_name">发送</string>
+    <string name="nav_setting_name">设置</string>
+    <string name="nav_update_name">检查更新</string>
+    <string name="nav_group_share_name">分享到</string>
+    <string name="main_menu_search_name">搜索</string>
+    <string name="main_menu_search_hint">订单/申请单</string>
+
+    <string name="popup_all_orders_delete">删除</string>
+    <string name="popup_all_orders_add">添加</string>
+
+    <string name="service_float_larger_title">基本情况</string>
+
+    <string name="popupwindow_stand_info">基本信息</string>
+    <string name="popupwindow_time_info">时间信息</string>
+    <string name="popupwindow_progress_info">完成情况</string>
+    <string name="popupwindow_slection_state">审批</string>
+
+    <!--订单详细信息-->
+    <string name="order_more_info_list_item_MATE_Code">MATE_Code:</string>
+    <string name="order_more_info_list_item_MATE_Name">MATE_Name:</string>
+    <string name="order_more_info_list_item_MUNITU_NAME">MUNITU_NAME:</string>
+    <string name="order_more_info_list_item_MATE_Size">MATE_Size:</string>
+    <string name="order_more_info_list_item_MATE_Model">MATE_Model:</string>
+    <string name="order_more_info_list_item_PRHSOD_AMNT">PRHSOD_AMNT:</string>
+    <string name="order_more_info_list_item_PRHSOD_ACCEIN">PRHSOD_ACCEIN:</string>
+    <string name="order_more_info_list_item_PRHSOD_BILLIN">PRHSOD_BILLIN:</string>
+    <string name="order_more_info_list_item_PRHSOD_AMNT_RTN">PRHSOD_AMNT_RTN:</string>
+    <string name="order_more_info_list_item_MATE_PRICEP">MATE_PRICEP:</string>
+
+    <!--申请单详细信息-->
+    <string name="apply_more_info_list_item_MATE_Code">MATE_Code</string>
+    <string name="apply_more_info_list_item_MATE_Name">MATE_Name</string>
+    <string name="apply_more_info_list_item_MATE_Size">MATE_Size</string>
+    <string name="apply_more_info_list_item_PRHSD_AMNT">PRHSD_AMNT</string>
+    <string name="apply_more_info_list_item_MATE_PRICEP">MATE_PRICEP</string>
+    <string name="title_activity_order_stand_info">OrderStandInfoActivity</string>
+
+    <!--订单基本信息-->
+    <string name="provider">供应商</string>
+    <string name="complete_status">完成情况</string>
+    <string name="owner">所有者</string>
+    <string name="maintain">维护者</string>
+    <string name="judge">审批人</string>
+
+    <!-- 时间基本信息 -->
+    <string name="tCreate">创建时间</string>
+    <string name="tSerive">维护时间</string>
+    <string name="tCommit">提交时间</string>
+    <string name="tApprove">审批时间</string>
+    <string name="tFinish">终止时间</string>
+
+
+</resources>
