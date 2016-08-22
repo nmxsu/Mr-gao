@@ -9,9 +9,19 @@ public class TimeInfo {
     public static final String is_passed = "is_passed";
 
 
+    //订单ID
+    private String PRHSORD_ID;
+
+    //NAMEE
+    private String NAMEE;
+
+    //状态
+    private String PRAC_NAME;
+
     private boolean IS_PASSED;
+
     // 采购时间信息
-    private String tCreate;
+    private String tCreate;//private String PRHSORD_ID;
     private String tSerive;
     private String tCommit;
     private String tApprove;
@@ -28,22 +38,22 @@ public class TimeInfo {
     }
 
 
-   /* public TimeInfo()
-
-    //只包含ID的OrderInfo
-    public OrderInfo(String PRHSORD_ID) {
-
-        this.PRHSORD_ID = PRHSORD_ID;
-        this.MATE_CODE = "";
-        this.PRHS_SOUR = "";
-        this.DEP_CODE = "";
+    public TimeInfo(String tCreate) {
+        this.tCreate = tCreate;
+        this.tSerive = "";
+        this.tApprove = "";
+        this.tCommit = "";
+        this.tFinish = "";
         this.IS_PASSED = false;
     }
 
-    //只读
+
+
+
+
     public String getPRHSORD_ID() {
         return this.PRHSORD_ID;
-    }
+    }//订单
 
     public String getNAMEE() {
         return this.NAMEE;
@@ -56,5 +66,5 @@ public class TimeInfo {
     public boolean getIS_PASSED() {
 
         return this.IS_PASSED;
-    }*/
+    }
 }

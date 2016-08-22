@@ -2,7 +2,7 @@ package com.fat246.orders.parser;
 
 import android.util.Xml;
 
-import com.fat246.orders.bean.OrderStandInfo;
+import com.fat246.orders.bean.TimeStandInfo;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -12,34 +12,37 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
+import java.sql.Time;
 
-public class OrderInfoParser {
-
+/**
+ * Created by hx on 2016/8/22.
+ */
+public class TimeInfoParser {
     //URL str
     private String URL_Str;
 
-    //OrderId
-    private String OrderId;
+    //Time
+    private String tTime;
 
-    public OrderInfoParser(String URL_Str, String OrderId) {
+    public TimeInfoParser(String URL_Str, String tTime) {
 
         this.URL_Str = URL_Str;
-        this.OrderId = OrderId;
+        this.tTime = tTime;
     }
 
-    public OrderStandInfo getOrderInfo() {
+    public TimeStandInfo getTimeInfo() {
 
         //保存中网页服务上面加载下来的  xml数据
-        OrderStandInfo orderStandInfo = sendGetAllOrdersListPost("OrderId=" + OrderId);
+        TimeStandInfo timeStandInfo = sendGetAllTimeListPost("tTime=" + tTime);
 
-        return orderStandInfo;
+        return timeStandInfo;
     }
 
     //发送  post 请求
-    private OrderStandInfo sendGetAllOrdersListPost(String param) {
+    private TimeStandInfo sendGetAllTimeListPost(String param) {
 
         PrintWriter out = null;
-        OrderStandInfo orderStandInfo;
+        TimeStandInfo timeStandInfo;
 
         try {
 
@@ -70,24 +73,24 @@ public class OrderInfoParser {
             //定义InputStream 输入流来读取URL的响应
             InputStream is = conn.getInputStream();
 
-            orderStandInfo = parse(is);
+            timeStandInfo = parse(is);
 
         } catch (Exception e) {
 
             e.printStackTrace();
-            orderStandInfo = null;
+            timeStandInfo = null;
         }
 
         //添加一点 车市数据
-        orderStandInfo = new OrderStandInfo("1213", "1213", "1213", "1213", "1213", "1213");
+        timeStandInfo = new TimeStandInfo("1213", "1213", "1213", "1213", "1213");
 
-        return orderStandInfo;
+        return timeStandInfo;
     }
 
     //解析  xml数据
-    private OrderStandInfo parse(InputStream is) throws XmlPullParserException, IOException {
+    private TimeStandInfo parse(InputStream is) throws XmlPullParserException, IOException {
 
-        OrderStandInfo orderStandInfo = null;
+        TimeStandInfo timeStandInfo = null;
 
         try {
 
@@ -101,8 +104,8 @@ public class OrderInfoParser {
             int i = 0;
 
             //引用
-            String ORDER_ID = null, ORDER_PROVIDER = null, COMPLETE_STATUS = null, ORDER_OWNER = null;
-            String ORDER_MAINTAIN = null, ORDER_JUDGE = null;
+            String tCreate = null, tSerive = null, tCommit = null, tApprove = null;
+            String tFinish = null;
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
 
@@ -119,44 +122,39 @@ public class OrderInfoParser {
                             switch (i % 6) {
 
                                 case 0:
-                                    ORDER_ID = str;
+                                    tCreate = str;
 
-                                    if (ORDER_ID == null) ORDER_ID = "";
+                                    if (tCreate == null) tCreate = "";
                                     break;
                                 case 1:
-                                    ORDER_PROVIDER = str;
+                                    tSerive = str;
 
-                                    if (ORDER_PROVIDER == null) ORDER_PROVIDER = "";
+                                    if (tSerive == null) tSerive = "";
                                     break;
                                 case 2:
-                                    COMPLETE_STATUS = str;
+                                    tCommit = str;
 
-                                    if (COMPLETE_STATUS == null) COMPLETE_STATUS = "";
+                                    if (tCommit == null) tCommit = "";
                                     break;
 
                                 case 3:
 
-                                    ORDER_OWNER = str;
+                                    tApprove = str;
 
-                                    if (ORDER_OWNER == null) ORDER_OWNER = "";
+                                    if (tApprove == null) tApprove = "";
                                     break;
 
                                 case 4:
 
-                                    ORDER_MAINTAIN = str;
+                                    tFinish = str;
 
-                                    if (ORDER_MAINTAIN == null) ORDER_MAINTAIN = "";
+                                    if (tFinish == null) tFinish = "";
                                     break;
-                                case 5:
 
-                                    ORDER_JUDGE = str;
-
-                                    if (ORDER_JUDGE == null) ORDER_JUDGE = "";
-
-
-                                    orderStandInfo = new OrderStandInfo(ORDER_ID, ORDER_PROVIDER, COMPLETE_STATUS,
-                                            ORDER_OWNER, ORDER_MAINTAIN, ORDER_JUDGE);
-                                    break;
+                                default:
+                                timeStandInfo = new TimeStandInfo(tCreate, tSerive, tCommit,
+                                        tFinish, tApprove );
+                                break;
                             }
 
                             //别忘了  ++
@@ -171,7 +169,6 @@ public class OrderInfoParser {
 
             is.close();
         }
-        return orderStandInfo;
+        return timeStandInfo;
     }
 }
-

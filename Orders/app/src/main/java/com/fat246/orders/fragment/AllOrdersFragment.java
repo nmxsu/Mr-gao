@@ -31,6 +31,7 @@ import com.fat246.orders.activity.OrderStandInfoActivity;
 import com.fat246.orders.activity.TimeStandInfoActivity;
 import com.fat246.orders.application.MyApplication;
 import com.fat246.orders.bean.OrderInfo;
+import com.fat246.orders.bean.TimeInfo;
 import com.fat246.orders.bean.UserInfo;
 import com.fat246.orders.parser.AllOrdersListParser;
 import com.fat246.orders.widget.Ptr.PtrClassicFrameLayout;
@@ -55,6 +56,7 @@ public class AllOrdersFragment extends Fragment {
     private ListView mListView;
     //集合List
     private List<OrderInfo> mList = new ArrayList<>();
+    private List<TimeInfo> tList = new ArrayList<>();
     //用户信息
     private UserInfo mUserInfo;
     //是否通过评审
@@ -246,7 +248,14 @@ public class AllOrdersFragment extends Fragment {
         timeInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent tIntent =new Intent(AllOrdersFragment.this.getContext(), TimeStandInfoActivity.class);
+                Intent tIntent = new Intent(AllOrdersFragment.this.getContext(), TimeStandInfoActivity.class);
+                Bundle bundle = new Bundle();
+                OrderInfo orderInfo = mList.get(position);
+                bundle.putString(OrderInfo.prhsord_id, orderInfo.getPRHSORD_ID());
+                bundle.putBoolean(OrderInfo.is_passed, orderInfo.getIS_PASSED());
+                tIntent.putExtras(bundle);
+                startActivity(tIntent);
+                mPop.dismiss();
 
             }
         });

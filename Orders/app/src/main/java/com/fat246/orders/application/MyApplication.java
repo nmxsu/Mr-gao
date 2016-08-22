@@ -45,6 +45,10 @@ public class MyApplication extends Application {
     private static final String ORDER_STAND_INFO = "orderstandinfo";
     private static final String ORDER_STAND_INFO_URL = PRE_URL + "//" + ORDER_STAND_INFO;
 
+    //时间订单信息
+    private static final String TIME_STAND_INFO = "timestandinfo";
+    private static final String TIME_STAND_INFO_URL = PRE_URL + "//" + TIME_STAND_INFO;
+
     //官方网站
     private static final String OFFICIAL_WEBSITE = "http://www.fat246.com";
 
@@ -149,4 +153,11 @@ public class MyApplication extends Application {
     public static String getOrderStandInfoUrl() {
         return ORDER_STAND_INFO_URL;
     }
+
+    //返回订单基本信息地址
+    public static String getTimeStandInfoUrl(){
+        return TIME_STAND_INFO_URL;
+
+    }
+
 }

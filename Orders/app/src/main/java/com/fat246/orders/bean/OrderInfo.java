@@ -42,7 +42,7 @@ public class OrderInfo {
     //只读
     public String getPRHSORD_ID() {
         return this.PRHSORD_ID;
-    }
+    }//订单
 
     public String getNAMEE() {
         return this.NAMEE;
