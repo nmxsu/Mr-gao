@@ -47,6 +47,10 @@ public class MyApplication extends Application {
 
     //时间订单信息
     private static final String TIME_STAND_INFO = "timestandinfo";
+    private static final String FINAL_STAND_INFO_URL = PRE_URL + "//" + TIME_STAND_INFO;
+
+    //订单落实情况信息
+    private static final String FINAL_STAND_INFO = "finalstandinfo";
     private static final String TIME_STAND_INFO_URL = PRE_URL + "//" + TIME_STAND_INFO;
 
     //官方网站
@@ -157,6 +161,10 @@ public class MyApplication extends Application {
     //返回订单基本信息地址
     public static String getTimeStandInfoUrl(){
         return TIME_STAND_INFO_URL;
+    }
+
+    public static String getFinalStandInfoUrl(){
+        return FINAL_STAND_INFO_URL;
 
     }
 

@@ -266,7 +266,14 @@ public class AllOrdersFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent fIntent=new Intent(AllOrdersFragment.this.getContext(),FinalStandInfoActivity.class);
+                Bundle bundle=new Bundle();
+                OrderInfo orderInfo = mList.get(position);
+                bundle.putString(OrderInfo.prhsord_id, orderInfo.getPRHSORD_ID());
+                bundle.putBoolean(OrderInfo.is_passed, orderInfo.getIS_PASSED());
 
+                fIntent.putExtras(bundle);
+                startActivity(fIntent);
+                mPop.dismiss();
             }
         });
 
