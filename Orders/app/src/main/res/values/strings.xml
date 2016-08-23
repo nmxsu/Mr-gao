@@ -103,4 +103,12 @@
     <string name="tFinish">终止时间</string>
 
 
+    <!--采购订单落实情况信息 -->
+    <string name="fCode">材料代码</string>
+    <string name="fName">材料名称</string>
+    <string name="fOrderq">订单数量</string>
+    <string name="fReceiveq">收货数量</string>
+    <string name="fStorageq">入库数量</string>
+    <string name="fReturnq">退货数量</string>
+
 </resources>

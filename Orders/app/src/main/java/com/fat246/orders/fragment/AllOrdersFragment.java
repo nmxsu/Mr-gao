@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -26,6 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.fat246.orders.R;
+import com.fat246.orders.activity.FinalStandInfoActivity;
 import com.fat246.orders.activity.MoreInfo;
 import com.fat246.orders.activity.OrderStandInfoActivity;
 import com.fat246.orders.activity.TimeStandInfoActivity;
@@ -263,6 +265,7 @@ public class AllOrdersFragment extends Fragment {
         progressInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent fIntent=new Intent(AllOrdersFragment.this.getContext(),FinalStandInfoActivity.class);
 
             }
         });
